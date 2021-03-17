@@ -19,4 +19,10 @@ const result = document.querySelector(".lorem-text");
 form.addEventListener("submit", function (e) {
   e.preventDefault();
   // console.log("Submit form");
+
+  // const value = amount.value;
+  // returning a first string!
+
+  const value = parseInt(amount.value);
+  // console.log(value);
 });
