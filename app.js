@@ -25,4 +25,28 @@ form.addEventListener("submit", function (e) {
 
   const value = parseInt(amount.value);
   // console.log(value);
+  // console.log(isNaN(value));
+
+  // random value
+  const random = Math.floor(Math.random() * text.length);
+
+  // empty value
+  // number < -1...negative value
+  // number > 9
+
+  if (isNaN(value) || value <= 0 || value > 9) {
+    result.innerHTML = `<p class="result">${text[random]}</p>`;
+  } else {
+    // slice() return a copy and new array
+    let tempText = text.slice(0, value);
+    // console.log(tempText);
+    tempText = tempText
+      .map(function (item) {
+        return `<p class="result">${item}</p>`;
+      })
+      // join return the array as string seperated by ""
+      .join("");
+    result.innerHTML = tempText;
+    // console.log(tempText);
+  }
 });
